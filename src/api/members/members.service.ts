@@ -16,13 +16,13 @@ export class MembersService {
     return 'This action adds a new member';
   }
 
-  public async findAll(lang:string): Promise<Member[]> {
+  public async findAll(lang:string) {
     const { data:members } = await this.supabase
       .from('members')
       .select('id, github_code, github_user_hash, linkedin_user_hash, info:member_translations!inner(name, last_name, position, skills, summary)')
       .eq('info.lang', lang);
 
-    return members as Promise<Member[]>;
+    return members;
   }
 
   findOne(id: number) {

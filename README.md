@@ -57,6 +57,13 @@ $ bun run test:e2e
 $ bun run test:cov
 ```
 
+## Supabase
+Make sure you have setled the requireed environment variables.
+If you heed some help to create the supabase queries, check [this page](https://supabase.com/docs/guides/api/sql-to-rest). 
+
+> NOTE: Check for supabase commands on `package.json` file
+
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.

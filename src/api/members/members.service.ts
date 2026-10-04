@@ -16,17 +16,21 @@ export class MembersService {
     return 'This action adds a new member';
   }
 
-  public async findAll(lang:string) {
-    const { data:members } = await this.supabase
-      .from('members')
-      .select('id, github_code, github_user_hash, linkedin_user_hash, info:member_translations!inner(name, last_name, position, skills, summary)')
-      .eq('info.lang', lang);
+  public async findAll(lang:string): Promise<Member[]> {
+    const { data:members } = await this.supabase.rpc('find_all_members', {
+      p_lang: lang
+    });
 
-    return members;
+    return members as Member[];
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} member`;
+  public async findOne(id: number, lang:string): Promise<Member> {
+    const { data:member } = await this.supabase.rpc('get_member', {
+      p_id: id,
+      p_lang: lang
+    });
+    
+    return member as unknown as Member;
   }
 
   update(id: number, updateMemberDto: UpdateMemberDto) {

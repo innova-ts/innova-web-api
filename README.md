@@ -61,9 +61,7 @@ $ bun run test:cov
 Make sure you have setled the requireed environment variables.
 If you heed some help to create the supabase queries, check [this page](https://supabase.com/docs/guides/api/sql-to-rest). 
 
-::: info
-Check for supabase commands on `package.json` file
-:::
+> NOTE: Check for supabase commands on `package.json` file
 
 
 ## Deployment

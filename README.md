@@ -63,6 +63,21 @@ If you heed some help to create the supabase queries, check [this page](https://
 
 > NOTE: Check for supabase commands on `package.json` file
 
+### Steps to sync with supabase DB
+
+1. Login supabase:
+``` bash
+supabase login
+```
+
+2. Sync with the project:
+``` bash
+supabase link --project-ref <$PROJECT_ID>
+```
+> NOTE: You can get your `<$PROJECT_ID>` from the `SUPABASE_URL` environment variable, this must to be something like this:
+```env
+SUPABASE_URL=https://<$PROJECT_ID>.supabase.co
+```
 
 ## Deployment
 

@@ -1,0 +1,31 @@
+# Workflow name
+name: Lint and Build
+
+# Define when the workflow will run
+on: 
+  pull_request:
+    branches: ["main", "feat/*", "feature/*", "bugfix/*", "fix/*", "chore/*", "docs/*"]
+
+permissions:
+  contents: read
+
+jobs:
+  lint_and_build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup node js 24.12.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24.12.0
+        cache: 'bun'
+        cache-dependency-path: 'package-lock.json'
+        
+    - name: Install dependencies
+      run: bun install
+
+    - name: Lint OXC
+      run: bun run lint
+    
+  

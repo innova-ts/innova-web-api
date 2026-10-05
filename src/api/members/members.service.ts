@@ -13,6 +13,7 @@ export class MembersService {
   ) {}
 
   create(createMemberDto: CreateMemberDto) {
+    console.log({createMemberDto});
     return 'This action adds a new member';
   }
 
@@ -34,6 +35,7 @@ export class MembersService {
   }
 
   update(id: number, updateMemberDto: UpdateMemberDto) {
+    console.log({updateMemberDto});
     return `This action updates a #${id} member`;
   }
 

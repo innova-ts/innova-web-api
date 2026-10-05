@@ -1,8 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
 import { MembersService } from './members.service.js';
 import { CreateMemberDto } from './dto/create-member.dto.js';
 import { UpdateMemberDto } from './dto/update-member.dto.js';
-import { ListMembersRequestDto } from './dto/list-members-request.dto.js';
+import { I18nLang } from 'nestjs-i18n';
 
 @Controller('members')
 export class MembersController {
@@ -14,13 +14,13 @@ export class MembersController {
   }
 
   @Get()
-  findAll(@Query() query:ListMembersRequestDto) {
-    return this.membersService.findAll(query.lang);
+  findAll(@I18nLang() lang:string) {
+    return this.membersService.findAll(lang);
   }
 
   @Get(':id')
-  findOne(@Query() query:ListMembersRequestDto, @Param('id', ParseIntPipe) id: number) {
-    return this.membersService.findOne(id, query.lang);
+  findOne(@I18nLang() lang:string, @Param('id', ParseIntPipe) id: number) {
+    return this.membersService.findOne(id, lang);
   }
 
   @Patch(':id')

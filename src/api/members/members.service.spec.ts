@@ -1,12 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MembersService } from './members.service.js';
+import { buildSupabaseTestingProvider } from '../../supabase/supabase.module.js';
 
 describe('MembersService', () => {
   let service: MembersService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [MembersService],
+      providers: [MembersService, buildSupabaseTestingProvider()],
     }).compile();
 
     service = module.get<MembersService>(MembersService);

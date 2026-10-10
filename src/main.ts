@@ -2,6 +2,7 @@ import { NestFactory, NestApplication } from '@nestjs/core';
 import { AppModule } from './app.module.js';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
+import { i18nValidationExceptionFactory } from './settings/validation/validation-exception.factory.js';
 
 const setAppConfig = (app: NestApplication): { port: number } => {
   const configService: ConfigService = app.get(ConfigService);
@@ -19,7 +20,7 @@ const setAppConfig = (app: NestApplication): { port: number } => {
 const setUpPipes = (app: NestApplication): void => {
   app.useGlobalPipes(new ValidationPipe({
     transform: true,
-    errorFormat: 'grouped'
+    exceptionFactory: i18nValidationExceptionFactory,
   }));
 }
 

@@ -16,3 +16,20 @@ INSERT INTO "public"."member_translations" ("id", "member_id", "name", "last_nam
 (3, 2, 'Victor', 'V.', 'Líder de equipo', 'Liderazgo técnico,Arquitectura de software,Desarrollo,Metodologías ágiles', 'Lidera al equipo técnico, supervisa el desarrollo y asegura la calidad, eficiencia y cumplimiento de los estándares tecnológicos.', '2026-10-04 02:07:33.528689+00', '2026-10-04 02:07:33.528689+00', 'es'), 
 (4, 2, 'Victor', 'V.', 'Team Leader', 'Technical leadership,Software architecture,Development,Agile methodologies', 'Leads the technical team, supervises development, and ensures quality, efficiency, and compliance with technological standards.', '2026-10-04 02:08:16.762388+00', '2026-10-04 02:08:16.762388+00', 'en');
 
+
+-- Set metrics data
+INSERT INTO "public"."metrics" ("id", "value", "symbol") VALUES 
+(1, '50', '+'),
+(2, '10', '+'),
+(3, '99.9', '%'),
+(4, '24/7', null);
+
+INSERT INTO "public"."metric_translations" ("metric_id", "title", "description", "lang") VALUES 
+(1, 'Proyectos exitosos', 'Despliegues completados', 'es'),
+(1, 'Success projects', 'Deployments completed', 'en'),
+(2, 'Paises alcanzados', 'Presencia internacional', 'es'),
+(2, 'Scoped countries', 'International presence', 'en'),
+(3, 'Disponibilidad garantizada', 'Alta disponibilidad SLA', 'es'),
+(3, 'Guaranteed uptime', 'High availability SLA', 'en'),
+(4, 'Soporte continuo', 'Operatividad ininterrumpida', 'es'),
+(4, 'Continuous support', 'Uninterrupted operations', 'en');

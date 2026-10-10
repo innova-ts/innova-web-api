@@ -21,10 +21,10 @@
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
     "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
     "migration:create": "bun supabase migration new",
-    "migration:up": "bun supabase migration up",
-    "migration:down": "bun supabase migration down",
+    "migration:up": "bun supabase migration up --linked",
+    "migration:down": "bun supabase migration down --linked",
     "migrate": "bun supabase db push",
-    "migrate:fresh": "bun supabase db reset"
+    "migrate:fresh": "bun supabase db reset linked"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",

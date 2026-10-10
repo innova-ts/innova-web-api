@@ -14,6 +14,8 @@ const setAppConfig = (app: NestApplication): { port: number } => {
     trustedOrigins: [frontendURL]
   });
 
+  app.enableCors();
+
   return { port }
 }
 

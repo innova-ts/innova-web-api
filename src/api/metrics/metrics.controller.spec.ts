@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { MetricsController } from './metrics.controller.js';
 import { MetricsService } from './metrics.service.js';
+import { buildSupabaseTestingProvider } from '../../supabase/supabase.module.js';
 
 describe('MetricsController', () => {
   let controller: MetricsController;
@@ -8,7 +9,7 @@ describe('MetricsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [MetricsController],
-      providers: [MetricsService],
+      providers: [MetricsService, buildSupabaseTestingProvider()],
     }).compile();
 
     controller = module.get<MetricsController>(MetricsController);

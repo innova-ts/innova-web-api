@@ -1,6 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param, ParseIntPipe } from '@nestjs/common';
 import { MetricsService } from './metrics.service.js';
-import { CreateMetricDto } from './dto/create-metric.dto.js';
 import { UpdateMetricDto } from './dto/update-metric.dto.js';
 import { I18nLang } from 'nestjs-i18n';
 

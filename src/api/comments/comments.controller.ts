@@ -10,4 +10,9 @@ export class CommentsController {
   public bests(@I18nLang() lang:string) {
     return this.commentsService.bests(lang);
   }
+
+  @Get('happier-companies')
+  public happierCompanies(@I18nLang() lang:string) {
+    return this.commentsService.listHappierCompanies(lang);
+  }
 }

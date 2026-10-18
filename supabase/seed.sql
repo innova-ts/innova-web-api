@@ -33,3 +33,58 @@ INSERT INTO "public"."metric_translations" ("metric_id", "title", "description",
 (3, 'Guaranteed uptime', 'High availability SLA', 'en'),
 (4, 'Soporte continuo', 'Operatividad ininterrumpida', 'es'),
 (4, 'Continuous support', 'Uninterrupted operations', 'en');
+
+
+-- Companies definition, pending add logo images
+INSERT INTO "public"."companies" ("id", "logo_source") VALUES 
+(1, ''),
+(2, ''),
+(3, ''),
+(4, '');
+
+INSERT INTO "public"."company_translations" ("company_id", "lang", "name", "description") VALUES 
+(1, 'es', 'Fintech Solutions', ''),
+(1, 'en', 'Fintech Solutions', ''),
+(2, 'es', 'Datacorp', ''),
+(2, 'en', 'Datacorp', ''),
+(3, 'es', 'ACME', ''),
+(3, 'en', 'ACME', ''),
+(4, 'es', 'Adirondack S.A.', ''),
+(4, 'en', 'Adirondack S.A.', '');
+
+
+INSERT INTO "public"."positions" ("id", "deleted_at") VALUES 
+(1, NULL),
+(2, NULL),
+(3, NULL);
+
+INSERT INTO "public"."position_translations" ("position_id", "lang", "name") VALUES 
+(1, 'es', 'CTO'),
+(1, 'en', 'CTO'),
+(2, 'es', 'Vicepresidente de ingeniería'),
+(2, 'en', 'VP Engineering'),
+(3, 'es', 'Líder técnico'),
+(3, 'en', 'Tech. Lead');
+
+
+INSERT INTO "public"."employees" ("id", "company_id", "position_id", "name", "last_name") VALUES 
+(1, 1, 1, 'Susana', 'Horia'),
+(2, 2, 2, 'Luigi', 'Mada'),
+(3, 3, 3, 'Salvador', 'Vulcano'),
+(4, 4, 1, 'Elena', 'Nito Del Bosque');
+
+INSERT INTO "public"."comments" ("employee_id", "stars") VALUES 
+(1, 5),
+(2, 5),
+(3, 5),
+(4, 5);
+
+INSERT INTO "public"."comment_translations" ("comment_id", "lang", "message") VALUES 
+(1, 'es', 'Innova reconstruyo nuestro backend heredado en 4 meses. La latencia se redujo en un 40% y la infraestructura es finalmente predecible.'),
+(1, 'en', 'Innova rebuild our legacy backend in 4 months. The latency was reduced by 40% and the infrastructure is finally predictable.'),
+(2, 'es', 'El rigor técnico de su equipo es incomparable. No solo escriben código, diseñan arquitecturas pensadas para durar.'),
+(2, 'en', 'The technical rigor of their team is incomparable. They don’t just write code, they design architectures meant to last.'),
+(3, 'es', 'Excelente servicio, gran dominio técnico y entregas a tiempo. Un socio tecnológico de total confianza.'),
+(3, 'en', 'Excellent service, great technical expertise, and on-time delivery. A truly reliable tech partner.'),
+(4, 'es', 'Excelente servicio, atención y resultados. El equipo entendió nuestras necesidades y entregó una solución eficiente, profesional y de alta calidad. ¡Totalmente recomendable!'),
+(4, 'en', 'Excellent service, great communication, and outstanding results. The team understood our needs and delivered an efficient, professional, high-quality solution. Highly recommended!.');

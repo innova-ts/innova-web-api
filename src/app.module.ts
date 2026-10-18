@@ -6,13 +6,14 @@ import { ConfigModule } from '@nestjs/config';
 import { SupabaseModule } from './supabase/supabase.module.js';
 import { I18nModule } from './settings/modules/i18n.js';
 import { MetricsModule } from './api/metrics/metrics.module.js';
+import { CommentsModule } from './api/comments/comments.module.js';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), 
     I18nModule,
     SupabaseModule, 
-    MembersModule, MetricsModule
+    MembersModule, MetricsModule, CommentsModule
   ],
   controllers: [AppController],
   providers: [AppService],

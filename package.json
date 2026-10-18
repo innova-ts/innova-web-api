@@ -24,7 +24,7 @@
     "migration:up": "bun supabase migration up --linked",
     "migration:down": "bun supabase migration down --linked",
     "migrate": "bun supabase db push",
-    "migrate:fresh": "bun supabase db reset linked"
+    "migrate:fresh": "bun supabase db reset --linked"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
